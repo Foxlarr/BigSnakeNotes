@@ -55,3 +55,45 @@ def edit_note():
     else:
         print("Заметка не найдена")
 
+# Функция для удаления заметки
+def delete_note():
+    id = int(input("Введите ID заметки: "))
+    note = [n for n in notes if n["id"] == id]
+    if note:
+        notes.remove(note[0])
+        save_notes()
+        print("Заметка удалена")
+    else:
+        print("Заметка не найдена")
+
+# Цикл для работы с заметками
+while True:
+    print("1. Просмотреть список заметок")
+    print("2. Просмотреть конкретную заметку")
+    print("3. Добавить новую заметку")
+    print("4. Редактировать заметку")
+    print("5. Удалить заметку")
+    print("6. Выход")
+    choice = input("Введите номер операции: ")
+
+    if choice == "1":
+        view_notes()
+
+    elif choice == "2":
+        view_note()
+
+    elif choice == "3":
+        add_note()
+
+    elif choice == "4":
+        edit_note()
+
+    elif choice == "5":
+        delete_note()
+
+    elif choice == "6":
+        print("Выход")
+        break
+
+    else:
+        print("Некорректный выбор, попробуйте снова")
