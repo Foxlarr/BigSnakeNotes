@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 import json
 
 # Открытие файла с заметками (если файл не существует, он будет создан)
